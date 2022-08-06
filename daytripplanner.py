@@ -33,7 +33,16 @@ def randomly_generated_fun():
     print(f"We have selected for you a {randomly_generated_entertainment}")
 
 welcome_message()
-randomly_generated_destination()
+
+while randomly_generated_destination() == "Lousianna":
+    print (input("Do you want to go here? "))
+    if input() != "yes":
+        print("Okay let's try again.")
+        continue
+    else:
+        print("Okay let't go!")
+
+
 randomly_generated_restaruants()
 randomly_generated_transportation()
 randomly_generated_fun()
