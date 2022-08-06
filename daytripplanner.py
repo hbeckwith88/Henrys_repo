@@ -9,6 +9,7 @@ def welcome_message():
 
 
 
+from cProfile import run
 import random
 destinations = [ "Louisiana", "Texas", "California", "Chicago"]
 restaruants = [ "Hometown Buffet", "Al's BBQ", "Kitchen Story", "Chi-Town Pizza"]
@@ -27,6 +28,12 @@ def randomly_generated_transportation():
     randomly_generated_transportation = random.choice(mode_of_transportation)
     print(f"We have selected for you a {randomly_generated_transportation}")
 
-def randomly_generated_entertainment():
+def randomly_generated_fun():
     randomly_generated_entertainment = random.choice(entertainment)
     print(f"We have selected for you a {randomly_generated_entertainment}")
+
+welcome_message()
+randomly_generated_destination()
+randomly_generated_restaruants()
+randomly_generated_transportation()
+randomly_generated_fun()
