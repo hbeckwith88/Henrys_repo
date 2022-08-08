@@ -18,7 +18,7 @@ entertainment = ["Theatre", "Football game", "Haunted house", "Night club"]
 
 def randomly_generated_destination():
     randomly_generated_destination = random.choice(destinations)
-    print(f"We have selected for you {randomly_generated_destination}")
+    return randomly_generated_destination
 
 def randomly_generated_restaruants():
     randomly_generated_restaruants = random.choice(restaruants)
@@ -33,16 +33,29 @@ def randomly_generated_fun():
     print(f"We have selected for you a {randomly_generated_entertainment}")
 
 welcome_message()
+final_destination = ""
+rgd = randomly_generated_destination()
+user_input = input(f"We selected for you {rgd}. Doy you like this destination? y/n")
+if user_input == "yes":
+    final_destination = rgd
+while user_input != "yes":
+    rgd = randomly_generated_destination()
+    user_input = input(f"Okay what about this location: {rgd}")
+    if user_input == "yes":
+        final_destination = rgd
+print(f"Your selected destination is {final_destination}!")
 
-while randomly_generated_destination() == "Lousianna":
-    print (input("Do you want to go here? "))
-    if input() != "yes":
-        print("Okay let's try again.")
-        continue
-    else:
-        print("Okay let't go!")
 
 
+
+
+
+
+
+
+
+
+randomly_generated_destination()
 randomly_generated_restaruants()
 randomly_generated_transportation()
 randomly_generated_fun()
